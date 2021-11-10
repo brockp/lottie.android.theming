@@ -2,7 +2,10 @@
     <string name="app_name">lottieTesting</string>
     <string name="the_penrose_triangle">The Penrose Triangle</string>
     <string name="about">Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.</string>
-    <string name="change_theme">Change Theme</string>
+    <string name="change_theme">Biotic Pink Theme</string>
+    <string name="biotic_blue">Biotic Blue Theme</string>
+    <string name="reverse">Reverse Animation</string>
+    <string name="frames">Play Specific Frames</string>
     <string name="stop_animation">Stop animation</string>
     <string name="progress">Progress</string>
 </resources>

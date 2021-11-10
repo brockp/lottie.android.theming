@@ -23,38 +23,20 @@ class MainActivity : AppCompatActivity() {
 
         val animationView:LottieAnimationView = findViewById(R.id.animationView)
         val changeThemeButton:Button = findViewById(R.id.changeThemeButton)
+        val bioticBlueThemeButton:Button = findViewById(R.id.bioticBlueThemeButton)
         val stopAnimationButton:Button = findViewById(R.id.stopAnimationButton)
-        val progressTv:TextView = findViewById(R.id.progressTv)
+        val reverseAnimationButton:Button = findViewById(R.id.reverseAnimationButton)
+        val playSpecificFramesButton:Button = findViewById(R.id.playSpecificFramesButton)
 
 
 
-        // Set up onLoad options, add any dynamic Lottie updates here and they should show up upon the animation successfully loaded
+
+        // Set up onLoad options
         with(animationView) {
-
-
-
             // Log animation keypaths for reference
             animationView.resolveKeyPath(KeyPath("**")).forEach {
                 Log.i("KeyPath", it.toString())
             }
-
-//            animationView.addValueCallback(
-//                KeyPath("**", "right-triangle", "right-triangle", "Fill 1"),
-//                LottieProperty.COLOR,
-//                { Color.rgb(200,11,202)},
-//            )
-//
-//            animationView.addValueCallback(
-//                KeyPath("**", "left-triangle", "left-triangle", "Fill 1"),
-//                LottieProperty.COLOR,
-//                { Color.rgb(212,99,213)},
-//            )
-//
-//            animationView.addValueCallback(
-//                KeyPath("**", "bottom-triangle", "bottom-triangle", "Fill 1"),
-//                LottieProperty.COLOR,
-//                { Color.rgb(223,185,223)},
-//            )
         }
 
         changeThemeButton.setOnClickListener {
@@ -85,17 +67,41 @@ class MainActivity : AppCompatActivity() {
             animationView.playAnimation()
         }
 
+        bioticBlueThemeButton.setOnClickListener {
+
+            // Log animation keypaths for reference
+            animationView.resolveKeyPath(KeyPath("**")).forEach {
+                Log.i("KeyPath", it.toString())
+            }
+
+            animationView.addValueCallback(
+                KeyPath("**", "right-triangle", "right-triangle", "Fill 1"),
+                LottieProperty.COLOR,
+                { Color.rgb(48,11,202)},
+            )
+
+            animationView.addValueCallback(
+                KeyPath("**", "left-triangle", "left-triangle", "Fill 1"),
+                LottieProperty.COLOR,
+                { Color.rgb(121,99,213)},
+            )
+
+            animationView.addValueCallback(
+                KeyPath("**", "bottom-triangle", "bottom-triangle", "Fill 1"),
+                LottieProperty.COLOR,
+                { Color.rgb(193,185,223)},
+            )
+
+            animationView.playAnimation()
+        }
+
         stopAnimationButton.setOnClickListener {
             animationView.pauseAnimation()
             animationView.setMinFrame(0)
         }
 
-
-
-
-
         // Reverse animation on click
-        animationView.setOnClickListener {
+        reverseAnimationButton.setOnClickListener {
                 if(isCheckedDone) {
                     animationView.speed = -1f
                     animationView.playAnimation()
@@ -108,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Play specific frames on click
-        animationView.setOnClickListener {
+        playSpecificFramesButton.setOnClickListener {
             playFrames = if (playFrames) {
                 animationView.setMinAndMaxProgress(0.5f, 1.0f)
                 animationView.playAnimation()

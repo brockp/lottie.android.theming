@@ -27,21 +27,35 @@
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:id="@+id/progressTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Progress"/>
-
     <Button
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:text="@string/change_theme"
         android:id="@+id/changeThemeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/biotic_blue"
+        android:id="@+id/bioticBlueThemeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/reverse"
+        android:id="@+id/reverseAnimationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:text="@string/frames"
+        android:id="@+id/playSpecificFramesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
