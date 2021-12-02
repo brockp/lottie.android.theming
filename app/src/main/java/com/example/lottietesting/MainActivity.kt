@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.TextView
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieProperty
 import com.airbnb.lottie.model.KeyPath
@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         val animationView:LottieAnimationView = findViewById(R.id.animationView)
         val changeThemeButton:Button = findViewById(R.id.changeThemeButton)
         val bioticBlueThemeButton:Button = findViewById(R.id.bioticBlueThemeButton)
@@ -31,13 +33,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        // Set up onLoad options
-        with(animationView) {
-            // Log animation keypaths for reference
-            animationView.resolveKeyPath(KeyPath("**")).forEach {
-                Log.i("KeyPath", it.toString())
-            }
-        }
 
         changeThemeButton.setOnClickListener {
 
@@ -125,10 +120,10 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-
-
-
    
     }
+
+
 }
+
 
